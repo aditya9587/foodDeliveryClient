@@ -1,0 +1,59 @@
+.container{
+  margin: 1% 0%;
+}
+.insideContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.dishes{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    width: 12vw;
+}
+.dishes img{
+    width: 100%;
+    height: 100%;
+}
+.dishDesc{
+  background-color: #F5F5F5;
+  padding-left: 10px;
+  font-size: 0.8rem;
+  /* padding: 10px; */
+}
+.dishHeading{
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.restaurant{
+  font-size: 0.6rem;
+  color: #FC8A06;
+}
+@media only screen and (max-width: 426px){
+  .container{
+    background-color: #D9D9D9;
+    padding: 5% 0%;
+  }
+  .insideContainer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .dishes{
+    width: 50%;
+    padding: 1%;
+
+  }
+  .dishDesc{
+    font-size: 1rem;
+    background-color: #03081F;
+    border-radius: 0px 0px 14px 14px;
+  }
+  .dishHeading{
+    color: #FC8A06;
+  }
+  .restaurant{
+    color: white;
+  }
+  
+}

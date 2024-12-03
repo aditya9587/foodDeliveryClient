@@ -1,0 +1,56 @@
+
+.insideContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between  ;
+}
+
+.RestaurantChain{
+  height: 30vh;
+  width: 13vw;
+  cursor: pointer;
+}
+.RestaurantChain img{
+  height: 80%;
+  width: 100%;
+}
+.RestaurantChain p{
+  text-align: center;
+  font-size: 0.8rem;
+  color: white;
+  background-color: #FC8A06;
+  height: 25%;
+  width: 100%;
+  margin-top: -6px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+@media screen and (max-width: 426px){
+  .insideContainer{
+    flex-wrap: nowrap;
+    /* overflow-x: auto; */
+    gap: 10px;
+    width: 100vw;
+  }
+  .RestaurantChain{
+    height: 20vh;
+    width: 30vw;
+  }
+  .RestaurantChain img{
+    height: 80%;
+    width: 100%;
+  }
+  .RestaurantChain p{
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+    background-color: #FC8A06;
+    height: 25%;
+    width: 100%;
+    margin-top: -6px;
+    font-weight: bold;
+    padding-top: 10px;
+  }
+  
+}

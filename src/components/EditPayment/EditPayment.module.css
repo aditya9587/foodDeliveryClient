@@ -1,0 +1,68 @@
+.container{
+  height: max-content;
+  width: 50vw;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  z-index: -1;
+}
+.container h2{
+  padding: 2%;
+}
+
+.paymentForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;  
+  width: 100%;
+}
+.paymentForm label{
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  padding: 0% 2%;
+}
+.paymentForm input{
+  height: 2.5rem;
+  width: 75%;
+  padding: 0% 2%;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  margin-left:auto;
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  margin-top: auto;
+  height: 14vh;
+  background-color: #FC8A06;
+  color: white;
+}
+.remove{
+  background-color: #663700;
+  color: white;
+  border: none;
+  height: 3rem;
+  width: 6rem;  
+  border-radius: 14px;
+}
+.saveCancel{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.cancel{
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+.save{
+  border: none;
+  background-color: white;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 14px;
+}

@@ -1,0 +1,100 @@
+.container{
+  background: linear-gradient(to right, #EEEEEE, #E0E1DC);
+  height: 60vh;
+  width: 100%;
+  margin-top: 5%;
+  display: flex;
+}
+.coupleImg{
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+}
+.right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.logoContainer{
+  display: flex;
+  align-items: center;
+}
+.logo{
+  width: 150px;
+  height: 50px;
+}
+.logoContainer h1{
+  font-size: 2.5rem;
+  /* margin-left: 10px; */
+}
+.logoText{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #03081F;
+  margin-left: -25%;
+  border-radius: 0px 20px 20px 0px;
+  padding-left: 20%;
+}
+.startHeading{
+  font-size: 2rem;
+  text-decoration: underline;
+
+
+}
+.customHeading{
+  color: white;
+}
+.storeLogo{
+  width: 60%;
+  height: 50px;
+  margin-left: 50px;
+}
+
+@media only screen and (max-width: 426px){
+  .container{
+    flex-direction: column-reverse;
+  }
+  .coupleImg{
+    width: 100%;
+    height: 50%;
+  }
+  .right{
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+  .logoContainer{
+    margin-left: 10px;
+  }
+  .logoContainer h1{
+    font-size: 2rem;
+    color: #03081F;
+  }
+  .logoContainer p{
+    font-size: 2rem;
+    color: #03081F;
+  }
+  .logoText{
+    background-color: transparent;
+  }
+  .startHeading{
+    color: #FC8A06;
+    font-size: 1.5rem;
+  }
+  .customHeading{
+    font-size: 1.5rem;
+    width: 100%;
+    background-color: transparent;
+    color: #03081F;
+  }
+
+  .storeLogo{
+    width: 80%;
+    height: 50px;
+    margin-left: 10px;
+  }
+  
+}

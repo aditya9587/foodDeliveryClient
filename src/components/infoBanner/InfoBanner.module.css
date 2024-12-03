@@ -1,0 +1,98 @@
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  height: 40vh;
+  width: 100%;
+}
+.inside{
+  width: 50%;
+  position: relative;
+}
+.bannerImg{
+  width: 100%;
+  padding: 1%;
+  height: 100%;
+}
+.bannerText{
+  position: absolute;
+  top: 2.2%;
+  left: 10%;
+  background-color: white;
+  height: 15%;
+  width: 40%;
+  text-align: center;
+  font-weight: 700;
+  padding-top: 1%;
+  z-index: 2;
+  font-size: 0.8rem;
+  border-radius: 0px 0px 14px 14px;
+}
+.textInfo{
+  position: absolute;
+  top: 55%;
+  left: 10%;
+  z-index: 1;
+  color: white;
+}
+
+.textInfo h1{
+  font-size: 2em;
+  font-weight: 700;
+  /* margin: 0; */
+}
+.textInfo p{
+  font-size: 0.8em;
+  color: #FC8A06;
+}
+
+.textInfo button{
+  background-color: #FC8A06;
+  height: 30px;
+  width: 140px;
+  border: none; 
+  color: white;
+  font-size: 0.8em;
+  border-radius: 18px;
+}
+
+.inside::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 1%;
+  width: 50%;
+  height: 95%;
+  border-radius: 10px;
+
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+  z-index: 1;
+}
+
+@media screen and (max-width: 426px){
+  .container{
+    height: 50vh;
+  }
+  .inside{
+    width: 100%;
+  }
+  .bannerText{
+    width: 45%;
+    left: 10%;
+  }
+  .textInfo{
+    top: 60%;
+    left: 10%;
+  }
+  .textInfo h1{
+    font-size: 1.5em;
+  }
+  .textInfo p{
+    font-size: 0.6em;
+  }
+  .textInfo button{
+    height: 20px;
+    width: 100px;
+    font-size: 0.6em;
+  }
+  
+}

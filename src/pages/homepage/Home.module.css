@@ -1,0 +1,18 @@
+.HomeContainer{
+  font-family: "poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0% 5%;
+  gap: 1.5rem;
+}
+
+@media (max-width: 600px){
+  .HomeContainer{
+    margin: 0% 0%;
+  }
+  
+}
+
+/* mobile version */
+

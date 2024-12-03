@@ -1,0 +1,8 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    /* align-items: center; */
+    /* justify-content: center; */
+    margin: 0px 50px;
+}

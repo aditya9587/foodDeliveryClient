@@ -1,0 +1,102 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.login{
+  display: flex;
+  flex-direction: row;
+  height: 60vh;
+  /* width: 100vw; */
+  padding: 1%;
+}
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  column-gap: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  padding: 0% 10% 0% 15%;
+}
+.loginForm h1{
+  color: #FC8A06;
+  margin-right: auto;
+}
+.logo{
+  height: 4vh;
+  width: 10vw;
+}
+
+.loginForm form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.3rem;
+}
+
+.loginForm form input {
+  width: 100%;
+  height: 1.5rem;
+  padding: 3%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.loginForm form button{
+  width: 100%;
+  height: 1.3rem;
+  margin-bottom: 5%;
+  padding: 1%;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  background-color: #FC8A06;
+  color: white;
+  cursor: pointer;
+}
+
+.signupSpan{
+  color: #FC8A06;
+  cursor: pointer;
+}
+
+.sideImg{
+  height: 100%;
+  width: 50vw;
+}
+/* .cloudi{
+  height: 400px;
+  width: 400px;
+} */
+
+@media only screen and (max-width: 600px){
+  .login{
+    flex-direction: column;
+    height: 100vh;
+    padding-bottom: 5%;
+    
+  }
+  .logo{
+    height: 5vh;
+    width: 30vw;
+  }
+  .loginForm{
+    width: 100vw;
+    padding: 5% 10% 0% 15%;
+    gap: 1rem;
+  }
+  .loginForm h1{
+    margin-right: auto;
+  }
+  .loginForm form{
+    width: 100%;
+    gap: 0.8rem;
+  }
+  .sideImg{
+    display: none;
+  }
+}

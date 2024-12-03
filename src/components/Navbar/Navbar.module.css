@@ -1,0 +1,90 @@
+.conatiner{
+  height: 10vh;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+.logoImg{
+  height: 80%;
+  width: 10vw;
+}
+.insideContainer{
+  display: flex;
+  gap: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.loginbtndiv{
+  height: 80%;
+  padding: 1%;
+  display: flex;
+  gap: 0.5rem;
+ /* margin-left: auto; */
+  align-items: center;
+  background-color: #03081F;
+  color: white;
+  border-radius: 18px;
+}
+
+.mobile{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 20vh;
+}
+.mobilePart1{
+  display: flex;
+  flex-direction: row;
+  padding: 3%;
+  justify-content: space-between;
+  height: 50%;
+}
+.part1Img1{
+  width: 30%;
+  height: 40px;
+}
+.part1Img2{
+  width: 10%;
+  height: 40px;
+}
+.mobilePart2{
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+}
+.mobilePart2A {
+  background-color: #FC8A06;
+  color: black;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.mobilePart2B {
+  background-color: #028643;
+  color: white;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: 600;
+}
+.location{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1%;
+  gap: 0.5rem;
+  justify-content: end;
+}

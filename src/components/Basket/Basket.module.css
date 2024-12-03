@@ -1,0 +1,152 @@
+.container{
+  width: 20vw;
+  height: max-content;
+  font-family : "Poppins", sans-serif;
+  margin: 2% 5%;
+  border: 1px solid #CFCFCF;
+}
+.cartNavbar{
+  height: 8vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #028643;
+  color: white;
+  padding: 2%;
+}
+.cart{
+  height: 30px;
+  width: 30px;
+}
+.cartItems{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cartItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  border-bottom: 1px solid #CFCFCF;
+}
+.quantity{
+  width: 15%;
+  background-color: #FC8A06;
+  color: white;
+  padding: 2%;
+  border-radius: 50%;
+  text-align: center;
+}
+.price{
+  color: #028643;
+  font-weight: 500;
+}
+.itemType{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  width: 50%;
+  text-align: center;
+  /* gap: 10px; */
+}
+.remove{
+  width: 20px;
+  height: 20px;
+}
+.total{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 5% 0%;
+}
+.Totalpay{
+  background-color: #FC8A06CC;
+  width: 100%;
+  height: 8vh;
+  padding: 5%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-items: space-between;
+  align-items: center;
+}
+.insideTotal{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #CFCFCF;
+  width: 100%;
+  padding: 2%;
+  border-radius: 18px;
+}
+.payInput{
+  height: 5vh;
+  width: 80%;
+  border: none;
+  padding: 2% 5%;
+}
+.directions{
+  width: 20px;
+  height: 20px;
+}
+.checkout{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.insideCheckout{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.delivery{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  margin: 2%;
+  width: 50%;
+  padding: 1%;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+}
+.highlight{
+  font-weight: bold;
+}
+.checkoutBTN{
+  width: 100%;
+  height: 8vh;
+  background-color: #028643;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 14px;
+}
+.checkoutImg{
+  width: 20px;
+  height: 20px;
+}
+.checkoutButton{
+  width: 50%;
+  border: none;
+  text-align: start;
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+}
+.summary{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+}
+
+.values{
+  text-align: end;
+}

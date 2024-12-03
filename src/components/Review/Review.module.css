@@ -1,0 +1,87 @@
+.container{
+  height: 50vh;
+  background-color: #D9D9D9;
+  padding: 2%;
+  margin: 2% 0%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ReviewHead{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.direction{
+  background-color: #FC8A06;
+  height: 7vh;
+  padding: 10px;
+  border-radius: 50%;
+}
+.Reviewchat{
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  width: 25vw;
+  background-color: white;
+  font-size: 0.7rem;
+  padding: 2%;
+  justify-content: space-between;
+  gap: 10px;
+  /* margin-top: 2%; */
+}
+.profile{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.ReviewProfile{
+  height: 30px;
+  width: 30px;
+}
+.oneBox{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.reviewTop{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.timeStamp{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.reviewMiddle{
+
+}
+.reviewTopEnd{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+.starRating{
+  height: 20px;
+  width: 70px;
+  /* text-align: end; */
+  margin-left: auto;
+}
+.clock{
+  height: 20px;
+  width: 20px;
+}
+.reviewText{
+  font-size: 0.6rem;
+}
+.reviewCollection{
+  display: flex;
+  flex-direction: row;
+  /* gap: 10px; */
+  justify-content: space-between;
+}
