@@ -1,6 +1,6 @@
 import React,{useContext, useState} from "react";
 import style from "./EditPayment.module.css";
-import { addPayment } from "../../services/CardDetails";
+import { addCardDetails } from "../../services/CardDetails";
 export default function EditPayrment() {
 
   // const { cardDetials ,setCardDetails } = useContext(RestaurantContext);
@@ -21,7 +21,7 @@ export default function EditPayrment() {
 
     console.log("Form submission initiated with card details:", cardDetails);
     try {
-      const response = await addPayment(cardDetails);
+      const response = await addCardDetails(cardDetails);
       console.log("Server response received:", response);
 
       if (response.status === 201) {
