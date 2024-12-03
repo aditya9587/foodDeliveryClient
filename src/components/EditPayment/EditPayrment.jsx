@@ -1,6 +1,6 @@
 import React,{useContext, useState} from "react";
 import style from "./EditPayment.module.css";
-import { addPayment } from "../../services/payment";
+import { addPayment } from "../../services/CardDetails";
 export default function EditPayrment() {
 
   // const { cardDetials ,setCardDetails } = useContext(RestaurantContext);
