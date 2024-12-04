@@ -1,3 +1,7 @@
+/* .container{
+  height: 100%;
+  width: 100%;
+} */
 .header{
   display: flex;
   align-items: center;
@@ -10,7 +14,10 @@
 .info{
   display: flex;
   justify-content: space-between;
+  gap: 40px;
   margin: 10px 0;
+  width: 100%;
+ 
 }
 .Billdetail{
   width: 30%;
@@ -47,4 +54,86 @@
   border: none;
   cursor: pointer;
   border-radius: 16px;
+}
+.displayitem{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #03081F;
+  width: 100%;
+  border-radius: 14px;
+  padding: 2%;
+}
+.item{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.itemInfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+.itemPrice{
+  margin-left: auto;
+}
+.itemName{
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.orderNotes{
+  height: 2rem;
+  border-radius: 16px;
+  border: 1px solid #03081F;
+  padding: 2%;
+}
+
+.itemImage{
+  width: 30px;
+  height: 30px;
+  border-radius: 12px;
+}
+
+.itemQuantity{
+  font-size: 0.5rem;
+}
+.total{
+  /* width: 100%;
+  height: 20%; */
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.itemTotal{
+  width: 100%;
+  margin-left: auto;
+}
+.totalText{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.totalAmount{
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  gap: 10px;
+
+}
+
+@media screen and (max-width: 426px) {
+  .info{
+    flex-direction: column;
+  }
+  .Billdetail{
+    width: 100%;
+  }
+
+  
 }

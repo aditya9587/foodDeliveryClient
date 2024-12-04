@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import style from "./PaymentOption.module.css";
+import { RestaurantContext } from "../../ContextApi/RestaurantContext";
+import { useNavigate } from "react-router-dom";
 
 export default function PaymentOption() {
   const [displayDone, setDisplayDone] = useState(false);
 
+  const { total }= useContext(RestaurantContext);
+
+  const navigate = useNavigate();
   return (
     <div className={style.container}>
       {displayDone ? (
@@ -16,10 +21,13 @@ export default function PaymentOption() {
               chosen delights!
             </p>
             <div className={style.cartItems}>
-              <p>CartItems list</p>
               <button
                 className={style.checkoutBtn}
-                onClick={() => setDisplayDone(false)} // Reset state
+                onClick={() => {
+                  setDisplayDone(false);
+                  navigate("/home");
+                }} 
+
               >
                 Back to Home
               </button>
@@ -61,12 +69,12 @@ export default function PaymentOption() {
             <div className={style.checkout}>
               <div className={style.Display}>
                 <h4>Amount to be paid</h4>
-                <p>250</p>
+                <p>{total}</p>
               </div>
               <hr />
               <button
                 className={style.checkoutBtn}
-                onClick={() => setDisplayDone(true)} // Switch state
+                onClick={() => setDisplayDone(true)} 
               >
                 Proceed Payment
               </button>

@@ -1,3 +1,10 @@
 .container{
   margin: 0 6%;
 }
+
+@media screen and (max-width: 426px) {
+  .hideInMObile{
+    display: none;
+  }
+  
+}

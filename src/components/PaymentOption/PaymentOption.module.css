@@ -80,3 +80,31 @@
   width: 100%;
   text-align: center;
 }
+
+
+
+@media screen and (max-width: 426px) {
+  .content{
+    flex-direction: column;
+    height: 70vh;
+  }
+  .PaymentOption{
+    width: 100%;
+  }
+  .checkout{
+    width: 100%;
+    border: none;
+    margin-top: auto;
+  }
+  
+  .parent{
+    width: 100%;
+  }
+  .orderPlace{
+    padding: 0% 2%;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}

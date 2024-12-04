@@ -82,3 +82,72 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+@media screen and (max-width: 426px) {
+  .container{
+    padding: 0% 5%;
+  }
+  .header{  
+    display: flex;
+    align-items: center;
+  }
+  .profile img{
+    display: none;
+  }
+  .profile p {
+    display: none;
+  }
+  .profile button{
+    
+  } 
+  .details{
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin: 2% 0%;
+  }
+  .details label {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+   
+  }
+  .details input{
+    border: none;
+    background-color: #F5F5F5;
+    border-radius: 14px;
+    height: 2.5rem;
+    padding: 0% 2%;
+    width: 100%;
+  }
+
+  .hideInMobile{
+    display: none;
+  }
+
+  .payment{
+    display: flex;
+    flex-direction: column;
+    margin: 2% 0%;
+  }
+  
+  .paymentAdd{
+    display: flex;
+    flex-direction: row;
+    justify-content:start ;
+    padding-left: 2%;
+    align-items: center;
+    border: 1px solid #CFCFCF;
+    height: 3rem;
+    border-radius: 14px;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+  .paymentAdd img{
+    width: 30px;
+    height: 30px;
+  }
+}

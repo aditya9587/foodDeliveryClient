@@ -1,12 +1,32 @@
 import React, { useState, useEffect, useContext } from "react";
 import style from "./Basket.module.css";
-import { getCart } from "../../services/cart";
+import { getCart, removeItem } from "../../services/cart";
 import { RestaurantContext } from "../../ContextApi/RestaurantContext";
 import { useNavigate } from "react-router-dom";
+import { generateShareableLink } from "../../services/cart";
+import { toast } from "react-toastify";
 
 export default function Basket() {
 
   const { cartItems, setCartItems } = useContext(RestaurantContext);
+
+
+  const [shareableLink, setShareableLink] = useState('');
+  
+  const handleShareCart = async () => {
+    try {
+      const { shareToken } = await generateShareableLink();
+      const link = `${window.location.origin}/shared-cart/${shareToken}`;
+      setShareableLink(link);
+      
+      // Copy to clipboard
+      await navigator.clipboard.writeText(link);
+      toast.success('Cart link copied to clipboard!');
+    } catch (error) {
+      console.error('Error generating shareable link:', error);
+      toast.error('Failed to generate shareable link');
+    }
+  };
 
   const navigate = useNavigate();
 
@@ -22,8 +42,23 @@ export default function Basket() {
     fetchCartItems();
   }, []);
 
-  
-
+ 
+  const handleRemoveItem = async (itemId) => {
+    try {
+      const response = await removeItem({ productId: itemId });
+      
+      if (response.status === 200) {
+        // Update local state only after successful backend removal
+        setCartItems(cartItems.filter((item) => item.id !== itemId));
+      } else {
+        console.error("Failed to remove item:", response.data.error);
+        // Optionally show error to user via toast/alert
+      }
+    } catch (error) {
+      console.error("Error removing item from cart:", error);
+      // Handle error appropriately
+    }
+  };
   const removeItemFromCart = (itemId) => {
     setCartItems(cartItems.filter((item) => item.id !== itemId));
   };
@@ -41,6 +76,11 @@ export default function Basket() {
 
   return (
     <div className={style.container}>
+      <div className={style.share}>
+        <img src="/images/share-2.png" alt="" className={style.shareIcon} />
+        <p className={style.shareText}>Share this cart <br />with your friends</p>
+        <button className={style.copyLink}  onClick={handleShareCart}>Copy Link</button>
+      </div>
       <div className={style.cartNavbar}>
         <img src="/images/cart.png" alt="" className={style.cart} />
         <p>My Basket</p>
@@ -57,7 +97,7 @@ export default function Basket() {
             <img
               src="/images/Remove.png"
               alt=""
-              onClick={() => removeItemFromCart(item.id)}
+              onClick={() => handleRemoveItem(item.productId)}
               className={style.remove}
             />
           </div>
@@ -78,7 +118,7 @@ export default function Basket() {
       <div className={style.total}>
         <div className={style.Totalpay}>
           <p>Total to Pay:</p>
-          <p>₹ {calculateTotal().toFixed(2)}</p>
+          <p className={style.totalPrice}>₹ {calculateTotal().toFixed(2)}</p>
         </div>
 
         <div className={style.insideTotal}>

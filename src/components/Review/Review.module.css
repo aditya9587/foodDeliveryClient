@@ -58,9 +58,6 @@
   flex-direction: row;
   align-items: center;
 }
-.reviewMiddle{
-
-}
 .reviewTopEnd{
   display: flex;
   flex-direction: column;
@@ -84,4 +81,25 @@
   flex-direction: row;
   /* gap: 10px; */
   justify-content: space-between;
+}
+
+@media screen and (max-width: 426px) {
+  .container {
+    gap: 5px;
+  }
+  .ReviewHead{
+    font-size: 0.6rem;
+  }
+  .direction{
+    height: 5vh;
+    padding: 5px; 
+  }
+
+  .Reviewchat:not(:first-child) {
+    display: none;
+  }
+
+  .Reviewchat {
+    width: 90%; 
+  }
 }

@@ -7,6 +7,8 @@ import RestaurantItems from "../../components/RestaurantItems/RestaurantItems";
 import Review from "../../components/Review/Review";
 import Restaurant from "../../components/Restaurant/Restaurant";
 import FooterPanel from "../../components/Footer/FooterPanel";
+import MapComponent from "../../components/RestaurantMap/MapComponent";
+
 
 export default function ProductPage() {
   return (
@@ -17,6 +19,7 @@ export default function ProductPage() {
         <ResBanner />
         <RestaurantItems />
         <Review />
+        <MapComponent />
         <Restaurant />
       </div>
       <FooterPanel />

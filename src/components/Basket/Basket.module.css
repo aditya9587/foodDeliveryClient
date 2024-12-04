@@ -5,6 +5,32 @@
   margin: 2% 5%;
   border: 1px solid #CFCFCF;
 }
+.share{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  font-size: 0.8rem;
+  background-color: #FC8A06;
+  margin-bottom: 4%;
+  border-radius: 5px;
+  height: 15vh;
+}
+.shareIcon{
+  height: 20px;
+  width: 20px;
+}
+.shareText{
+  color: white;
+}
+.copyLink{
+  border: none;
+  border-radius: 14px;
+  color: #FC8A06;
+  height: 25px;
+  width: 25%;
+  font-size: 0.6rem;
+}
 .cartNavbar{
   height: 8vh;
   display: flex;
@@ -41,6 +67,9 @@
 .price{
   color: #028643;
   font-weight: 500;
+}
+.totalPrice{
+  margin-left: auto;
 }
 .itemType{
   display: flex;

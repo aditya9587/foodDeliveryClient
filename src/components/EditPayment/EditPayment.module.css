@@ -66,3 +66,54 @@
   width: 10rem;
   border-radius: 14px;
 }
+
+@media screen and (max-width: 426px) {
+  .container{
+    width: 100vw;
+    height: max-content;
+  }
+  .paymentForm label{
+    font-size: 0.7rem;
+  }
+  .paymentForm input{
+    margin-left: auto;
+    width: 80%;
+  }
+  .buttons{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .remove{
+    display: none;
+  }
+  .cancel{
+    width: 100%;
+  }
+  .buttons{
+    background-color: transparent;
+  }
+  .saveCancel{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .cancel{
+    background-color: #663700;
+    color: white;
+    border: none;
+    height: 3rem;
+    width: 6rem;  
+    width: 45vw;
+    border-radius: 14px;
+  }
+  .save{
+    background-color: #FC8A06;
+    color: white;
+    border: none;
+    height: 3rem;
+    width: 6rem;  
+    border-radius: 14px;
+    width: 45vw;
+  }
+  
+}

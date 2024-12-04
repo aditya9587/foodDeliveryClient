@@ -13,10 +13,13 @@ export default function Checkout() {
         <CartBar />
         <Navbar />
         <DesktopCart />
-
-        <Restaurant />
+        <div className={style.hideInMObile}>
+          <Restaurant />
+        </div>
       </div>
-      <FooterPanel />
+      <div className={style.hideInMObile}>
+        <FooterPanel />
+      </div>
     </>
   );
 }

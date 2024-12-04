@@ -1,9 +1,10 @@
 import React,{useContext, useState} from "react";
 import style from "./EditPayment.module.css";
 import { addCardDetails } from "../../services/CardDetails";
-export default function EditPayrment() {
+import { RestaurantContext } from "../../ContextApi/RestaurantContext";
+export default function EditPayrment({close}) {
 
-  // const { cardDetials ,setCardDetails } = useContext(RestaurantContext);
+  const { allCards, setAllCards} = useContext(RestaurantContext);
   const [cardDetails , setCardDetails] = useState({
     cardNumber: "",
     expiryDate: "",
@@ -15,17 +16,30 @@ export default function EditPayrment() {
       const { name, value} = e.target;
       setCardDetails({ ...cardDetails, [name]: value });
   }
+  //card Details form handler validation
+    const handleValidation = () => {
+      const { cardNumber, expiryDate, cvv, nameOnCard } = cardDetails;
+      if (cardNumber.trim() === "" || expiryDate.trim() === "" || cvv.trim() === "" || nameOnCard.trim() === "") {
+        return false;
+      }
+      return true;  
+
+    }
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Form submission initiated with card details:", cardDetails);
+    if (!handleValidation()) {
+      alert("Please fill all the fields correctly");
+      return;
+    }
     try {
       const response = await addCardDetails(cardDetails);
-      console.log("Server response received:", response);
 
       if (response.status === 201) {
-        console.log("Payment method updated successfully");
+        setAllCards([...allCards, cardDetails]);
+        close();
       } else {
         console.log("Failed to update payment method, status code:", response.status);
       }
@@ -57,7 +71,7 @@ export default function EditPayrment() {
         <div className={style.buttons}>
           <button className={style.remove}>Remove</button>
           <div className={style.saveCancel}>
-            <button className={style.cancel}>Cancel</button>
+            <button className={style.cancel} onClick={close}>Cancel</button>
             <button className={style.save} onSubmit={handleSubmit}>Save Changes</button>
           </div>
         </div>

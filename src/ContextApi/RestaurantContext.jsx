@@ -11,14 +11,13 @@ export const RestaurantProvider = ({ children }) => {
     return localStorage.getItem("name") || "Login/Signup";
   });
 
-  // const [dbCartItems, setDbCartItems] = useState([]);
+  const [allCards, setAllCards] = useState([]);
 
   const [cartItems, setCartItems] = useState([]);
 
-
   const [showCart, setShowCart] = useState(false);
 
-  
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     localStorage.setItem("restaurantName", restaurantName);
@@ -38,14 +37,14 @@ export const RestaurantProvider = ({ children }) => {
         showCart,
         setShowCart,
         cartItems,
-         setCartItems
-        // cardDetails , 
-        // setCardDetails
+        setCartItems,
+        total,
+        setTotal,
+        allCards,
+         setAllCards
       }}
     >
       {children}
     </RestaurantContext.Provider>
   );
 };
-
-

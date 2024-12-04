@@ -116,7 +116,7 @@
 }
 .dishContainer{
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: space-between;
@@ -192,4 +192,84 @@
 
 .setbasket{
   display: flex;
+}
+
+@media screen and (max-width: 426px) {
+  .searchDiv {
+    display: none; /* Hide search on small screens */
+  }
+
+  .navbar {
+    display: none; /* Hide navbar on small screens */
+  }
+
+  .offer {
+    display: none; /* Hide offers on small screens */
+  }
+
+  .dishParent {
+    display: flex;
+    flex-direction: column; /* Stack dishes vertically */
+    gap: 15px; /* Add spacing between items */
+    padding: 10px;
+  }
+
+  .dishContainer {
+    width: 100%; /* Full width for the container */
+    flex-direction: column; /* Stack items */
+    gap: 15px; /* Spacing between rows */
+  }
+
+  .dishText {
+    width: 100%; /* Make items take the full width */
+    height: auto; /* Adjust height automatically */
+    flex-direction: row; /* Ensure image and text align horizontally */
+    padding: 10px;
+  }
+
+  .dishTextValue {
+    width: 60%; /* Increase text area */
+  }
+
+  .dishImage {
+    width: 40%; /* Adjust image size */
+  }
+
+  .burgerImg {
+    width: 100%; /* Responsive image scaling */
+    height: auto;
+  }
+
+  .dishdesc {
+    font-size: 0.8rem; /* Adjust font size for smaller screens */
+  }
+
+  .dishPlus {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    height: 40px; /* Reduced button size for smaller screens */
+    width: 40px;
+  }
+
+  .timing {
+    flex-direction: column; /* Stack timing sections */
+    height: auto; /* Adjust height dynamically */
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .portion {
+    width: 100%; /* Full width for sections */
+    padding: 10px;
+  }
+
+  .portion img {
+    height: 15px; /* Adjust icon size */
+    width: 15px;
+  }
+
+  .timing {
+    display: none;
+  }
 }

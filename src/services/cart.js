@@ -55,3 +55,33 @@ export const removeItem = async (data) => {
     }
   }
 };
+
+
+export const generateShareableLink = async () => {
+  try {
+    const response = await axios.post(
+      `${import.meta.env.VITE_API_URL}/api/cart/share`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        }
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+
+export const getSharedCart = async (shareToken) => {
+  try {
+    const response = await axios.get(
+      `${import.meta.env.VITE_API_URL}/api/cart/shared/${shareToken}`
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
