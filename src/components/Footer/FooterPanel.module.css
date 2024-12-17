@@ -2,7 +2,7 @@
   font-family: "poppins", sans-serif;
   font-size: 0.7rem;
   height: 30vh;
-  width: 100%;
+  /* width: 100vw; */
   display: flex;
   justify-content: space-evenly;
   align-items: center;

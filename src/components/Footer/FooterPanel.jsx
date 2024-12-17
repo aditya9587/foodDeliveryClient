@@ -3,7 +3,7 @@ import style from "./FooterPanel.module.css";
 
 export default function FooterPanel() {
   return (
-    <>
+    <div>
       <div className={style.container}>
         <div className={style.ftrSec1}>
           <img src="/images/LOGO2.png" alt="" className={style.ftrImg1} />
@@ -56,6 +56,6 @@ export default function FooterPanel() {
         </div>
         
       </div>
-    </>
+    </div>
   );
 }
