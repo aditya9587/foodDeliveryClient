@@ -1,6 +1,9 @@
 # Order King - Order Your Favorite Food with Ease!
 
+Deployed Link : https://food-delivery-client-mu.vercel.app/
+
 Welcome to **Order King**, a user-friendly food delivery app where you can browse a variety of restaurants, add items to your cart, customize your orders, and enjoy fast and secure delivery. With features like user authentication, address management, payment integration, and profile updates, we’ve created a seamless and satisfying food ordering experience.
+
 
 ![Screenshot 2025-01-06 122933](https://github.com/user-attachments/assets/96868fc4-a73a-4e23-a100-333946ecfa32)
 ![Screenshot 2025-01-06 123529](https://github.com/user-attachments/assets/b3bec75f-79ea-40fe-8eaf-b4cf4658566a)
