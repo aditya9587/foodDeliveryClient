@@ -1,25 +1,31 @@
-import React,{ useContext} from "react";
+import React, { useContext } from "react";
 import style from "./CartBar.module.css";
 import { RestaurantContext } from "../../ContextApi/RestaurantContext";
+import { toast } from "react-toastify";
 
 export default function CartBar() {
   const { showCart, setShowCart } = useContext(RestaurantContext);
   const showCartHandler = () => {
-    setShowCart(!showCart);
-  }
+    const token = localStorage.getItem("token");
+    if (!token) {
+      toast.error("Please login first");
+      window.location.href = "/auth";
+    } else {
+      setShowCart(!showCart);
+    }
+  };
   return (
     <div className={style.container}>
       <>
-      <p>
-        Get 5% Off your first order,
-        <span className={style.promo}> Promo: ORDER5 </span>
-      </p>
+        <p>
+          Get 5% Off your first order,
+          <span className={style.promo}> Promo: ORDER5 </span>
+        </p>
       </>
-      
+
       <div className={style.nav}>
         <img src="/images/Location.png" alt="" />
-        <p>Regent Street, A4, A4201, London</p>
-        <span className={style.promo}>Change Location</span>
+        <p>Order food from your favourite restaurants</p>
       </div>
 
       <div className={style.cartDiv}>

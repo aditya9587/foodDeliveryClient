@@ -25,7 +25,7 @@ export default function PaymentOption() {
                 className={style.checkoutBtn}
                 onClick={() => {
                   setDisplayDone(false);
-                  navigate("/home");
+                  navigate("/");
                 }} 
 
               >

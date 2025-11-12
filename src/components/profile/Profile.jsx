@@ -25,7 +25,6 @@ export default function Profile() {
   useEffect(() => {
     const fetchCards = async () => {
       const cards = await getCardDetails();
-      console.log(cards); 
       setAllCards(cards.data);
     };
     fetchCards();
@@ -44,7 +43,6 @@ export default function Profile() {
   useEffect(() => {
     const fetchUserDetails = async () => {
       const details = await getUserDetails();
-      console.log(details);
       setUserDetails(details.data);
     };
     fetchUserDetails();

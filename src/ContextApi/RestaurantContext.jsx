@@ -19,6 +19,8 @@ export const RestaurantProvider = ({ children }) => {
 
   const [total, setTotal] = useState(0);
 
+  const [dbCartItems, setDbCartItems] = useState([]);
+
   useEffect(() => {
     localStorage.setItem("restaurantName", restaurantName);
   }, [restaurantName]);
@@ -41,7 +43,9 @@ export const RestaurantProvider = ({ children }) => {
         total,
         setTotal,
         allCards,
-         setAllCards
+        setAllCards,
+        dbCartItems,
+        setDbCartItems,
       }}
     >
       {children}

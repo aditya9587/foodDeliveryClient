@@ -4,7 +4,7 @@ import FooterPanel from "../../components/Footer/FooterPanel";
 import { AdvancedImage } from "@cloudinary/react";
 import { toast } from "react-toastify";
 import cld from "../../utils/ImageUtil";
-import { usersignup , userlogin} from "../../services/index.js";
+import { usersignup, userlogin } from "../../services/index.js";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -78,24 +78,23 @@ export default function Login() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setIsLoading(true)
+    setIsLoading(true);
 
     if (!showLogin) {
       try {
         if (loginValidation()) {
           const dataRes = await userlogin(loginData);
-          console.log(dataRes);
           if (dataRes.status === 200) {
             localStorage.setItem("token", dataRes.data.token);
             localStorage.setItem("name", dataRes.data.username);
             toast.success("Login Successful");
-            navigate("/home");
+            navigate("/");
           }
         }
       } catch (error) {
-        toast.error("Login Failed");
-      }finally{
-        setIsLoading(false)
+        toast.error("username or password is incorrect");
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -111,13 +110,12 @@ export default function Login() {
         }
       } catch (error) {
         toast.error("Signup Failed");
-      }
-      finally{
-        setIsLoading(false)
+      } finally {
+        setIsLoading(false);
       }
     }
   }
- 
+
   const myImage = cld.image("loginImage");
 
   return (
@@ -168,7 +166,10 @@ export default function Login() {
                   onChange={handleSignup}
                 />
               </label>
-              <button disabled={isLoading}> { isLoading ? "Loading..." :"Continue"} </button>
+              {isLoading && <span className={style.loader}></span>}
+              <button disabled={isLoading}>
+                {isLoading ? "Loading..." : "Continue"}
+              </button>
             </form>
             <p>
               Already have an account?
@@ -208,7 +209,10 @@ export default function Login() {
                   onChange={handleLogin}
                 />
               </label>
-              <button disabled={isLoading}> {isLoading? "Loading..." : "Sign in" }</button>
+              {isLoading && <span className={style.loader}></span>}
+              <button disabled={isLoading}>
+                {isLoading ? "Loading..." : "Sign In"}
+              </button>
             </form>
             <p>
               Don't you have an account?
@@ -221,6 +225,7 @@ export default function Login() {
             </p>
           </div>
         )}
+
         <AdvancedImage cldImg={myImage} className={style.sideImg} />
       </div>
 

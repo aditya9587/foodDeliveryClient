@@ -7,49 +7,47 @@ import { generateShareableLink } from "../../services/cart";
 import { toast } from "react-toastify";
 
 export default function Basket() {
+  const { cartItems, setCartItems, dbCartItems, setDbCartItems } =
+    useContext(RestaurantContext);
 
-  const { cartItems, setCartItems } = useContext(RestaurantContext);
+  const [shareableLink, setShareableLink] = useState("");
 
-
-  const [shareableLink, setShareableLink] = useState('');
-  
   const handleShareCart = async () => {
     try {
       const { shareToken } = await generateShareableLink();
       const link = `${window.location.origin}/shared-cart/${shareToken}`;
       setShareableLink(link);
-      
+
       // Copy to clipboard
       await navigator.clipboard.writeText(link);
-      toast.success('Cart link copied to clipboard!');
+      toast.success("Cart link copied to clipboard!");
     } catch (error) {
-      console.error('Error generating shareable link:', error);
-      toast.error('Failed to generate shareable link');
+      console.error("Error generating shareable link:", error);
+      toast.error("Failed to generate shareable link");
     }
   };
 
   const navigate = useNavigate();
-
+  const fetchCartItems = async () => {
+    try {
+      const data = await getCart();
+      setCartItems(data.data.cart);
+    } catch (error) {
+      console.log("Error in fetching cart items", error);
+    }
+  };
   useEffect(() => {
-    const fetchCartItems = async () => {
-      try {
-        const data = await getCart();
-        setCartItems(data.data.cart);
-      } catch (error) {
-        console.log("Error in fetching cart items", error);
-      }
-    };
     fetchCartItems();
   }, []);
 
- 
   const handleRemoveItem = async (itemId) => {
     try {
       const response = await removeItem({ productId: itemId });
-      
+
       if (response.status === 200) {
         // Update local state only after successful backend removal
         setCartItems(cartItems.filter((item) => item.id !== itemId));
+        fetchCartItems();
       } else {
         console.error("Failed to remove item:", response.data.error);
         // Optionally show error to user via toast/alert
@@ -78,8 +76,13 @@ export default function Basket() {
     <div className={style.container}>
       <div className={style.share}>
         <img src="/images/share-2.png" alt="" className={style.shareIcon} />
-        <p className={style.shareText}>Share this cart <br />with your friends</p>
-        <button className={style.copyLink}  onClick={handleShareCart}>Copy Link</button>
+        <p className={style.shareText}>
+          Share this cart <br />
+          with your friends
+        </p>
+        <button className={style.copyLink} onClick={handleShareCart}>
+          Copy Link
+        </button>
       </div>
       <div className={style.cartNavbar}>
         <img src="/images/cart.png" alt="" className={style.cart} />
@@ -166,7 +169,12 @@ export default function Basket() {
               alt=""
               className={style.checkoutImg}
             />
-            <button className={style.checkoutButton} onClick={() => navigate("/checkout")}>Checkout</button>
+            <button
+              className={style.checkoutButton}
+              onClick={() => navigate("/checkout")}
+            >
+              Checkout
+            </button>
           </div>
         </div>
       </div>

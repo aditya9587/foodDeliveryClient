@@ -7,7 +7,6 @@ export const usersignup = async (data) => {
         "Content-Type": "application/x-www-form-urlencoded",
       },
     }); 
-    console.log(res)
     return res;
   } catch (error) {
     return res.status(400).json({ message: "api call error" });

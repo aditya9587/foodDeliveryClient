@@ -11,14 +11,13 @@ import Checkout from "./pages/checkout/Checkout.jsx";
 import Location from "./pages/location/Location.jsx";
 import Payments from "./pages/Payments/Payments.jsx";
 
-
 function App() {
   return (
     <RestaurantProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/auth" element={<Login />} />
           <Route path="/products" element={<ProductPage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/checkout" element={<Checkout />} />

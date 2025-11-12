@@ -8,7 +8,7 @@ export default function DesktopCart() {
   const navigate = useNavigate();
   const { cartItems, setCartItems, total, setTotal } = useContext(RestaurantContext);
 
-  const itemsTotal = cartItems.reduce((sum, item) => sum + item.price, 0);
+  const itemsTotal = cartItems.reduce((sum, item) => sum + item.price*item.quantity, 0);
   const salesTax = itemsTotal * 0.05; // Example: 5% tax
  
   useEffect(() => {

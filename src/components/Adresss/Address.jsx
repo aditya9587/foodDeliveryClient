@@ -22,7 +22,6 @@ export default function Address() {
   useEffect(() => {
     const getAddress = async () => {
       const response = await getUserAddresses();
-      console.log(response.data.addresses);
       setAddressList(response.data.addresses);
     };
     getAddress();
@@ -44,9 +43,7 @@ export default function Address() {
 
   const handleSubmitAddress = async (e) => {
     e.preventDefault();
-    console.log(address);
     const response = await addAddress(address);
-    console.log(response);
     if (response.status === 201) {
       const updatedResponse = await getUserAddresses();
       setAddressList(updatedResponse.data.addresses);

@@ -6,25 +6,45 @@ import { AdvancedImage } from "@cloudinary/react";
 import Basket from "../Basket/Basket";
 import { RestaurantContext } from "../../ContextApi/RestaurantContext";
 import { addtocart, getCart } from "../../services/cart";
+import { toast } from "react-toastify";
 
 export default function RestaurantItems() {
   //show cart items
-  const { showCart, cartItems, setCartItems } = useContext(RestaurantContext);
-
-  const [dbCartItems, setDbCartItems] = useState([]);
+  const {
+    showCart,
+    cartItems,
+    setCartItems,
+    dbCartItems,
+    setDbCartItems,
+    setShowCart,
+  } = useContext(RestaurantContext);
 
   const navigate = useNavigate();
   // State to manage cart items in database
+  const fetchCartItems = async () => {
+    try {
+      const data = await getCart();
+      setCartItems(data.data.cart);
+    } catch (error) {
+      console.log("Error in fetching cart items", error);
+    }
+  };
 
   // Enhanced addItemToCart function with proper error handling
   const addItemToCart = async (item) => {
     try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("Please login to add items to cart");
+        navigate("/auth");
+      }
+
       if (!item || !item.productId) {
         throw new Error("Invalid item data");
       }
 
       const existingItem = dbCartItems.find(
-        (cartItem) => cartItem.productId === item.productId
+        (cartItems) => cartItems.productId === item.productId
       );
 
       if (existingItem) {
@@ -32,10 +52,11 @@ export default function RestaurantItems() {
           ...existingItem,
           quantity: existingItem.quantity + 1,
         };
-
         const response = await addtocart(updatedItem);
 
-        if (response && response.success) {
+        if (response && response.data.success) {
+          toast.success("Item added to cart");
+          setShowCart(true);
           setDbCartItems(
             dbCartItems.map((cartItem) =>
               cartItem.productId === item.productId ? updatedItem : cartItem
@@ -55,11 +76,14 @@ export default function RestaurantItems() {
         const newItem = { ...item, quantity: 1 };
         const response = await addtocart(newItem);
 
-        if (response && response.success) {
+        if (response && response.data.success) {
+          toast.success("Item added to cart");
+          setShowCart(true);
           setDbCartItems([...dbCartItems, newItem]);
         } else {
           console.error("Failed to add item to cart", response);
         }
+        fetchCartItems();
       }
     } catch (error) {
       console.error("Error managing cart item:", error);
